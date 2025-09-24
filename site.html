@@ -20,7 +20,7 @@
     .hero{display:flex;gap:24px;align-items:center;padding:40px 0}
     .hero__text h1{margin:0 0 12px;font-size:32px}
     .hero__text p{margin:0 0 18px;color:rgba(255,255,255,0.9)}
-    .btn{background:white;color:var(--accent);padding:12px 18px;border-radius:10px;text-decoration:none;font-weight:600}
+    .btn{background:white;color:var(--accent);padding:12px 18px;border-radius:10px;text-decoration:none;font-weight:600;cursor:pointer;border:none}
     .grid{display:grid;grid-template-columns:1fr 360px;gap:24px}
     .card{background:white;border-radius:12px;padding:18px;box-shadow:0 6px 20px rgba(12,20,40,0.08)}
     .services{display:flex;gap:12px;flex-wrap:wrap}
@@ -55,7 +55,6 @@
         <div class="hero__text">
           <h1>Sprzedaż komputerów i profesjonalna naprawa płyt głównych</h1>
           <p>Diagnostyka 24–48h, naprawy płyt głównych, wymiana układów, lodowanie BGA i montaż części. Zaufaj doświadczeniu — szybka realizacja i jasne ceny.</p>
-          <a class="btn" href="#kontakt">Umów naprawę</a>
         </div>
         <div style="min-width:260px">
           <div class="card">
@@ -110,21 +109,17 @@
             <li>Szybka diagnostyka i naprawa</li>
           </ul>
         </div>
-
-        <div style="margin-top:18px" class="card">
-          <h2>Oferta specjalna</h2>
-          <p style="color:var(--muted)">Promocja na diagnozę i naprawę płyt głównych — 20% zniżki dla studentów i firm.</p>
-        </div>
       </div>
 
       <aside>
-        <div class="card">
+        <div class="card" id="kontakt">
           <h3>Kontakt</h3>
           <div class="contact__info">
             <div><strong>Patryk Pabisz</strong></div>
-            <div>tel: <a href="tel:+48123456789">+48 123 456 789</a></div>
-            <div>email: <a href="mailto:kontakt@patrykpabisz.com">kontakt@patrykpabisz.com</a></div>
-            <div id="kontakt" style="margin-top:8px"><a class="btn" href="mailto:kontakt@patrykpabisz.com?subject=Zlecenie naprawy">Wyślij zgłoszenie</a></div>
+            <div>tel: +48 123 456 789</div>
+            <div>email: kontakt@patrykpabisz.com</div>
+            <div>adres: ul. Główna 10, 00-000 Miasto</div>
+            <button class="btn" onclick="window.location.href='mailto:pabiszpatryk@gmail.com?subject=Zapytanie%20ze%20strony'">Wyślij wiadomość</button>
           </div>
         </div>
 
@@ -144,13 +139,6 @@
         <img src="https://via.placeholder.com/400x220?text=Naprawa+4" alt="Przykład naprawy 4">
       </div>
     </section>
-
-    <section style="margin-top:24px" class="card">
-      <h2>Opinie klientów</h2>
-      <blockquote style="margin:12px 0;color:var(--muted)">"Szybka diagnoza i naprawa płyty głównej — laptop jak nowy." — Anna K.</blockquote>
-      <blockquote style="margin:12px 0;color:var(--muted)">"Profesjonalna obsługa firmowa, polecam." — Marek S.</blockquote>
-    </section>
-
   </main>
 
   <footer>
@@ -161,27 +149,5 @@
       </div>
     </div>
   </footer>
-
-  <!--
-    GUIDA: Jak opublikować tę stronę na GitHub Pages (skrót):
-
-    1) Załóż repozytorium na GitHub: nazwa "patryk-pabisz-site" (publiczne) lub użyj "username.github.io" dla strony użytkownika.
-    2) Sklonuj repo lokalnie:
-       git clone https://github.com/TWOJ_USER/patryk-pabisz-site.git
-    3) Skopiuj ten plik jako index.html do katalogu repo i wykonaj:
-       git add index.html
-       git commit -m "Initial site"
-       git push origin main
-    4) W GitHub -> Settings -> Pages (lub GitHub Pages) ustaw branch "main" (root) jako źródło i zapisz.
-    5) Po chwili strona będzie dostępna pod: https://TWOJ_USER.github.io/patryk-pabisz-site/ (lub https://TWOJ_USER.github.io/ dla repozytorium typu username.github.io)
-
-    Przydatne linki i wskazówki:
-      - Oficjalny przewodnik GitHub Pages: https://docs.github.com/en/pages/getting-started-with-github-pages (użyj Settings → Pages). 
-      - Jeśli chcesz mieć własną domenę, użyj pliku CNAME w repo i skonfiguruj DNS. 
-      - Dla lepszych praktyk SEO dodaj meta tagi Open Graph i JSON-LD oraz przyjazne slugi.
-
-    (Pełna instrukcja poniżej — zobacz plik README w repo lub dokumentację GitHub Pages.)
-  -->
-
 </body>
 </html>
