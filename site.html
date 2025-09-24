@@ -7,6 +7,7 @@
   <meta name="description" content="Sprzedaż komputerów i profesjonalna naprawa laptopów ze specjalizacją w płytach głównych. Szybkie diagnozy, części zamienne, serwis gwarancyjny i pogwarancyjny.">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   <style>
     :root{--accent:#0f62fe;--bg:#0f1724;--card:#ffffff;--muted:#6b7280}
     *{box-sizing:border-box}
@@ -31,7 +32,6 @@
     .contact__info{display:flex;flex-direction:column;gap:6px}
     .portfolio{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
     .portfolio img{width:100%;height:110px;object-fit:cover;border-radius:8px}
-    /* form styles */
     form input, form textarea, form button{width:100%;padding:10px;margin-top:8px;border-radius:8px;border:1px solid #e6e9ef}
     form label{font-weight:600;font-size:14px}
     .form-note{font-size:13px;color:var(--muted);margin-top:6px}
@@ -127,7 +127,6 @@
             <div>email: kontakt@patrykpabisz.com</div>
             <div>adres: ul. Główna 10, 00-000 Miasto</div>
 
-            <!-- FORMSPREE Kontakt: zamień YOUR_FORMSPREE_ID na Twój identyfikator formularza (np. f/abcdxyz) -->
             <form id="contact-form">
               <label for="name">Imię i nazwisko</label>
               <input type="text" id="name" name="name" required placeholder="Twoje imię i nazwisko">
@@ -138,13 +137,14 @@
               <label for="message">Wiadomość</label>
               <textarea id="message" name="message" rows="4" required placeholder="Opisz problem lub zapytanie"></textarea>
 
+              <div class="g-recaptcha" data-sitekey="YOUR_RECAPTCHA_SITE_KEY"></div>
+
               <div class="form-note">Wiadomości będą przesyłane na adres: <strong>pabiszpatryk@gmail.com</strong> (przez usługę Formspree). Nie wysyłamy automatów ani SPAM-u.</div>
 
               <button type="submit" class="btn">Wyślij wiadomość</button>
 
               <div id="form-response" role="status" aria-live="polite"></div>
             </form>
-            <!-- KONIEC FORMULARZA -->
 
             <p style="margin-top:8px;color:var(--muted);font-size:13px">Alternatywnie możesz wysłać maila na: <em>pabiszpatryk@gmail.com</em></p>
           </div>
@@ -160,7 +160,7 @@
     <section id="portfolio" style="margin-top:24px">
       <h2>Portfolio napraw</h2>
       <div class="portfolio">
-        <img src="https://via.placeholder.com/400x220?text=Naprawa+5" alt="Przykład naprawy 1">
+        <img src="https://via.placeholder.com/400x220?text=Naprawa+1" alt="Przykład naprawy 5">
         <img src="https://via.placeholder.com/400x220?text=Naprawa+2" alt="Przykład naprawy 2">
         <img src="https://via.placeholder.com/400x220?text=Naprawa+3" alt="Przykład naprawy 3">
         <img src="https://via.placeholder.com/400x220?text=Naprawa+4" alt="Przykład naprawy 4">
@@ -178,11 +178,7 @@
   </footer>
 
   <script>
-    // Instrukcja:
-    // 1) Zarejestruj formularz na https://formspree.io i uzyskaj swój endpoint, np. "https://formspree.io/f/abcdxyz"
-    // 2) Wstaw swój endpoint poniżej w zmiennej FORMSPREE_ENDPOINT
-
-    const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mdkwoqnn'; // <-- zamień na swój endpoint
+    const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mdkwoqnn';
 
     const form = document.getElementById('contact-form');
     const responseBox = document.getElementById('form-response');
@@ -191,8 +187,13 @@
       e.preventDefault();
       responseBox.innerHTML = '';
 
+      const recaptcha = document.querySelector('#contact-form .g-recaptcha-response');
+      if (!recaptcha || !recaptcha.value) {
+        responseBox.innerHTML = '<div class="alert error">Potwierdź, że nie jesteś robotem.</div>';
+        return;
+      }
+
       const data = new FormData(form);
-      // można dodać dodatkowe pola jak _subject czy _replyto jeśli chcesz
       try {
         const res = await fetch(FORMSPREE_ENDPOINT, {
           method: 'POST',
@@ -205,6 +206,7 @@
         if (res.ok) {
           responseBox.innerHTML = '<div class="alert success">Dziękuję — Twoja wiadomość została wysłana.</div>';
           form.reset();
+          grecaptcha.reset();
         } else {
           const json = await res.json();
           const err = (json && json.message) ? json.message : 'Wystąpił błąd podczas wysyłania.';
@@ -218,5 +220,3 @@
   </script>
 </body>
 </html>
-
-
