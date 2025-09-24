@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Patryk Pabisz — Komputery i Naprawa Płyt Głównych</title>
+  <meta name="description" content="Sprzedaż komputerów i profesjonalna naprawa laptopów ze specjalizacją w płytach głównych. Szybkie diagnozy, części zamienne, serwis gwarancyjny i pogwarancyjny.">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--accent:#0f62fe;--bg:#0f1724;--card:#ffffff;--muted:#6b7280}
+    *{box-sizing:border-box}
+    body{font-family:Inter,system-ui,Arial,sans-serif;margin:0;background:linear-gradient(180deg,#f7fafc,#fff);color:#0b1220}
+    header{background:linear-gradient(90deg,#071740 0%,#0f4ac8 100%);color:white;padding:36px 20px}
+    .container{max-width:1100px;margin:0 auto;padding:0 20px}
+    .nav{display:flex;align-items:center;justify-content:space-between}
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand__logo{width:48px;height:48px;background:white;border-radius:10px;display:flex;align-items:center;justify-content:center;color:var(--accent);font-weight:700}
+    nav a{color:white;text-decoration:none;margin-left:18px;font-weight:600}
+    .hero{display:flex;gap:24px;align-items:center;padding:40px 0}
+    .hero__text h1{margin:0 0 12px;font-size:32px}
+    .hero__text p{margin:0 0 18px;color:rgba(255,255,255,0.9)}
+    .btn{background:white;color:var(--accent);padding:12px 18px;border-radius:10px;text-decoration:none;font-weight:600;cursor:pointer;border:none}
+    .grid{display:grid;grid-template-columns:1fr 360px;gap:24px}
+    .card{background:white;border-radius:12px;padding:18px;box-shadow:0 6px 20px rgba(12,20,40,0.08)}
+    .services{display:flex;gap:12px;flex-wrap:wrap}
+    .service{flex:1 1 200px;padding:14px;border-radius:10px;border:1px solid #eef2ff}
+    h2{font-size:20px;margin:0 0 12px}
+    .features{display:flex;flex-direction:column;gap:10px}
+    footer{padding:24px 0;color:#374151}
+    .contact__info{display:flex;flex-direction:column;gap:6px}
+    .portfolio{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
+    .portfolio img{width:100%;height:110px;object-fit:cover;border-radius:8px}
+    /* form styles */
+    form input, form textarea, form button{width:100%;padding:10px;margin-top:8px;border-radius:8px;border:1px solid #e6e9ef}
+    form label{font-weight:600;font-size:14px}
+    .form-note{font-size:13px;color:var(--muted);margin-top:6px}
+    .alert{padding:10px;border-radius:8px;margin-top:10px}
+    .alert.success{background:#ecfdf5;border:1px solid #34d399;color:#065f46}
+    .alert.error{background:#fff5f5;border:1px solid #f87171;color:#7f1d1d}
+    @media (max-width:900px){.grid{grid-template-columns:1fr}.hero{flex-direction:column}.nav a{display:none}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="brand__logo">PP</div>
+        <div>
+          <div style="font-weight:700">Patryk Pabisz</div>
+          <div style="font-size:12px;color:rgba(255,255,255,0.8)">Komputery • Naprawa płyt głównych</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#oferta">Oferta</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#kontakt">Kontakt</a>
+      </nav>
+    </div>
+    <div class="container">
+      <div class="hero">
+        <div class="hero__text">
+          <h1>Sprzedaż komputerów i profesjonalna naprawa płyt głównych</h1>
+          <p>Diagnostyka 24–48h, naprawy płyt głównych, wymiana układów, lodowanie BGA i montaż części. Zaufaj doświadczeniu — szybka realizacja i jasne ceny.</p>
+        </div>
+        <div style="min-width:260px">
+          <div class="card">
+            <strong>Bezpłatna wstępna diagnoza</strong>
+            <p style="margin:8px 0 0;color:#6b7280">Przyjedź lub wyślij sprzęt — sprawdzimy i wycenimy problem bez zobowiązań.</p>
+            <hr style="margin:12px 0">
+            <div style="display:flex;gap:8px;align-items:center">
+              <div style="flex:1">
+                <div style="font-size:12px;color:#6b7280">Czas realizacji</div>
+                <div style="font-weight:700">24–72 godziny</div>
+              </div>
+              <div style="flex:1">
+                <div style="font-size:12px;color:#6b7280">Gwarancja</div>
+                <div style="font-weight:700">3 miesiące</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container" style="padding:28px 20px">
+    <section id="oferta" class="grid">
+      <div>
+        <div class="card">
+          <h2>Nasze usługi</h2>
+          <div class="services">
+            <div class="service">
+              <strong>Naprawa płyt głównych</strong>
+              <p style="margin:8px 0 0;color:var(--muted)">Diagnostyka, wymiana chipsetów, naprawa śladów, lutowanie BGA, odzyskiwanie zasilania.</p>
+            </div>
+            <div class="service">
+              <strong>Sprzedaż komputerów</strong>
+              <p style="margin:8px 0 0;color:var(--muted)">Kompletnie złożone zestawy do domu i pracy — montaż, testy i support.</p>
+            </div>
+            <div class="service">
+              <strong>Serwis dla firm</strong>
+              <p style="margin:8px 0 0;color:var(--muted)">Obsługa flot laptopów, szybsze czasy reakcji i serwis on-site.</p>
+            </div>
+            <div class="service">
+              <strong>Części i komponenty</strong>
+              <p style="margin:8px 0 0;color:var(--muted)">Gwarantowane części zamienne, testowane i oryginalne komponenty.</p>
+            </div>
+          </div>
+
+          <hr style="margin:18px 0">
+          <h3>Dlaczego my?</h3>
+          <ul style="color:var(--muted)">
+            <li>Specjalizacja w płytach głównych laptopów</li>
+            <li>Transparentne wyceny — bez ukrytych kosztów</li>
+            <li>Szybka diagnostyka i naprawa</li>
+          </ul>
+        </div>
+      </div>
+
+      <aside>
+        <div class="card" id="kontakt">
+          <h3>Kontakt</h3>
+          <div class="contact__info">
+            <div><strong>Patryk Pabisz</strong></div>
+            <div>tel: +48 123 456 789</div>
+            <div>email: kontakt@patrykpabisz.com</div>
+            <div>adres: ul. Główna 10, 00-000 Miasto</div>
+
+            <!-- FORMSPREE Kontakt: zamień YOUR_FORMSPREE_ID na Twój identyfikator formularza (np. f/abcdxyz) -->
+            <form id="contact-form">
+              <label for="name">Imię i nazwisko</label>
+              <input type="text" id="name" name="name" required placeholder="Twoje imię i nazwisko">
+
+              <label for="email">Adres e-mail</label>
+              <input type="email" id="email" name="email" required placeholder="twoj@email.com">
+
+              <label for="message">Wiadomość</label>
+              <textarea id="message" name="message" rows="4" required placeholder="Opisz problem lub zapytanie"></textarea>
+
+              <div class="form-note">Wiadomości będą przesyłane na adres: <strong>pabiszpatryk@gmail.com</strong> (przez usługę Formspree). Nie wysyłamy automatów ani SPAM-u.</div>
+
+              <button type="submit" class="btn">Wyślij wiadomość</button>
+
+              <div id="form-response" role="status" aria-live="polite"></div>
+            </form>
+            <!-- KONIEC FORMULARZA -->
+
+            <p style="margin-top:8px;color:var(--muted);font-size:13px">Alternatywnie możesz wysłać maila na: <em>pabiszpatryk@gmail.com</em></p>
+          </div>
+        </div>
+
+        <div style="margin-top:12px" class="card">
+          <h3>Godziny pracy</h3>
+          <p style="margin:6px 0;color:var(--muted)">Pon–Pt: 9:00–18:00<br>Sob: 10:00–14:00</p>
+        </div>
+      </aside>
+    </section>
+
+    <section id="portfolio" style="margin-top:24px">
+      <h2>Portfolio napraw</h2>
+      <div class="portfolio">
+        <img src="https://via.placeholder.com/400x220?text=Naprawa+1" alt="Przykład naprawy 1">
+        <img src="https://via.placeholder.com/400x220?text=Naprawa+2" alt="Przykład naprawy 2">
+        <img src="https://via.placeholder.com/400x220?text=Naprawa+3" alt="Przykład naprawy 3">
+        <img src="https://via.placeholder.com/400x220?text=Naprawa+4" alt="Przykład naprawy 4">
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+        <div>© <strong>Patryk Pabisz</strong> — Komputery i Naprawa Płyt Głównych</div>
+        <div style="color:var(--muted);font-size:13px">Zaprojektowano z myślą o prostocie i szybkości działania.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Instrukcja:
+    // 1) Zarejestruj formularz na https://formspree.io i uzyskaj swój endpoint, np. "https://formspree.io/f/abcdxyz"
+    // 2) Wstaw swój endpoint poniżej w zmiennej FORMSPREE_ENDPOINT
+
+    const FORMSPREE_ENDPOINT = 'https://formspree.io/f/YOUR_FORMSPREE_ID'; // <-- zamień na swój endpoint
+
+    const form = document.getElementById('contact-form');
+    const responseBox = document.getElementById('form-response');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      responseBox.innerHTML = '';
+
+      const data = new FormData(form);
+      // można dodać dodatkowe pola jak _subject czy _replyto jeśli chcesz
+      try {
+        const res = await fetch(FORMSPREE_ENDPOINT, {
+          method: 'POST',
+          headers: {
+            'Accept': 'application/json'
+          },
+          body: data
+        });
+
+        if (res.ok) {
+          responseBox.innerHTML = '<div class="alert success">Dziękuję — Twoja wiadomość została wysłana.</div>';
+          form.reset();
+        } else {
+          const json = await res.json();
+          const err = (json && json.message) ? json.message : 'Wystąpił błąd podczas wysyłania.';
+          responseBox.innerHTML = '<div class="alert error">' + err + '</div>';
+        }
+      } catch (err) {
+        responseBox.innerHTML = '<div class="alert error">Błąd sieci. Spróbuj ponownie później.</div>';
+        console.error(err);
+      }
+    });
+  </script>
+</body>
+</html>
