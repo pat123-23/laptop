@@ -31,6 +31,13 @@
     .contact__info{display:flex;flex-direction:column;gap:6px}
     .portfolio{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
     .portfolio img{width:100%;height:110px;object-fit:cover;border-radius:8px}
+    /* form styles */
+    form input, form textarea, form button{width:100%;padding:10px;margin-top:8px;border-radius:8px;border:1px solid #e6e9ef}
+    form label{font-weight:600;font-size:14px}
+    .form-note{font-size:13px;color:var(--muted);margin-top:6px}
+    .alert{padding:10px;border-radius:8px;margin-top:10px}
+    .alert.success{background:#ecfdf5;border:1px solid #34d399;color:#065f46}
+    .alert.error{background:#fff5f5;border:1px solid #f87171;color:#7f1d1d}
     @media (max-width:900px){.grid{grid-template-columns:1fr}.hero{flex-direction:column}.nav a{display:none}}
   </style>
 </head>
@@ -102,52 +109,4 @@
           </div>
 
           <hr style="margin:18px 0">
-          <h3>Dlaczego my?</h3>
-          <ul style="color:var(--muted)">
-            <li>Specjalizacja w płytach głównych laptopów</li>
-            <li>Transparentne wyceny — bez ukrytych kosztów</li>
-            <li>Szybka diagnostyka i naprawa</li>
-          </ul>
-        </div>
-      </div>
-
-      <aside>
-        <div class="card" id="kontakt">
-          <h3>Kontakt</h3>
-          <div class="contact__info">
-            <div><strong>Patryk Pabisz</strong></div>
-            <div>tel: +48 123 456 789</div>
-            <div>email: kontakt@patrykpabisz.com</div>
-            <div>adres: ul. Główna 10, 00-000 Miasto</div>
-            <button class="btn" onclick="window.location.href='mailto:pabiszpatryk@gmail.com?subject=Zapytanie%20ze%20strony'">Wyślij wiadomość</button>
-          </div>
-        </div>
-
-        <div style="margin-top:12px" class="card">
-          <h3>Godziny pracy</h3>
-          <p style="margin:6px 0;color:var(--muted)">Pon–Pt: 9:00–18:00<br>Sob: 10:00–14:00</p>
-        </div>
-      </aside>
-    </section>
-
-    <section id="portfolio" style="margin-top:24px">
-      <h2>Portfolio napraw</h2>
-      <div class="portfolio">
-        <img src="https://via.placeholder.com/400x220?text=Naprawa+1" alt="Przykład naprawy 1">
-        <img src="https://via.placeholder.com/400x220?text=Naprawa+2" alt="Przykład naprawy 2">
-        <img src="https://via.placeholder.com/400x220?text=Naprawa+3" alt="Przykład naprawy 3">
-        <img src="https://via.placeholder.com/400x220?text=Naprawa+4" alt="Przykład naprawy 4">
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container">
-      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
-        <div>© <strong>Patryk Pabisz</strong> — Komputery i Naprawa Płyt Głównych</div>
-        <div style="color:var(--muted);font-size:13px">Zaprojektowano z myślą o prostocie i szybkości działania.</div>
-      </div>
-    </div>
-  </footer>
-</body>
-</html>
+          <h3>Dlaczego
